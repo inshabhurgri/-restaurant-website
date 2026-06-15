@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tasty Bites | Restaurant</title>
+<style>
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+body {line-height:1.6; color:#333;}
+.container {max-width:1100px; margin:auto; padding:0 20px;}
+nav {background:#2c3e50; color:#fff; padding:1rem 0; position:sticky; top:0; z-index:100;}
+nav .container {display:flex; justify-content:space-between; align-items:center;}
+.logo {font-size:1.8rem; font-weight:bold; color:#e67e22;}
+.nav-links {list-style:none; display:flex; gap:25px;}
+.nav-links a {color:#fff; text-decoration:none; font-weight:500;}
+.nav-links a:hover {color:#e67e22;}
+.menu-btn {display:none; font-size:1.8rem; cursor:pointer;}
+.hero {background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4') center/cover; color:#fff; height:90vh; display:flex; align-items:center; text-align:center;}
+.hero h1 {font-size:3.5rem; margin-bottom:1rem;}
+.hero p {font-size:1.2rem; margin-bottom:2rem;}
+.btn {display:inline-block; background:#e67e22; color:#fff; padding:14px 35px; border-radius:5px; text-decoration:none; font-weight:bold; transition:0.3s;}
+.btn:hover {background:#d35400; transform:translateY(-2px);}
+section {padding:80px 0;}
+h2 {text-align:center; margin-bottom:50px; font-size:2.5rem; color:#2c3e50;}
+.dishes, .features, .testimonials {display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px;}
+.card {background:#fff; padding:25px; border-radius:10px; text-align:center; box-shadow:0 5px 15px rgba(0,0,0,0.1); transition:0.3s;}
+.card:hover {transform:translateY(-10px);}
+.card img {width:100%; height:200px; object-fit:cover; border-radius:8px; margin-bottom:20px;}
+.card h3 {margin-bottom:15px; color:#e67e22; font-size:1.4rem;}
+#about {background:#f8f9fa;}
+.testimonials .card {font-style:italic; background:#2c3e50; color:#fff;}
+.testimonials h4 {margin-top:15px; color:#e67e22; font-style:normal;}
+footer {background:#2c3e50; color:#fff; text-align:center; padding:40px 0;}
+.footer-content {display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:30px; text-align:left; margin-bottom:30px;}
+.footer-content h3 {color:#e67e22; margin-bottom:15px;}
+.social a {color:#fff; margin-right:15px; text-decoration:none; font-size:1.1rem;}
+.social a:hover {color:#e67e22;}
+.copyright {border-top:1px solid #34495e; padding-top:20px; margin-top:20px;}
+@media(max-width:768px){
+.nav-links {display:none; flex-direction:column; position:absolute; top:70px; left:0; width:100%; background:#2c3e50; padding:20px; text-align:center;}
+.nav-links.active {display:flex;}
+.menu-btn {display:block;}
+.hero h1 {font-size:2.2rem;}
+.hero {height:70vh;}
+h2 {font-size:2rem;}
+.footer-content {text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+<div class="container">
+<div class="logo">Tasty Bites</div>
+<div class="menu-btn" onclick="toggleMenu()">☰</div>
+<ul class="nav-links" id="navLinks">
+<li><a href="#home">Home</a></li>
+<li><a href="#dishes">Menu</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</div>
+</nav>
+
+<section class="hero" id="home">
+<div class="container">
+<h1>Delicious Food, Delivered Fresh</h1>
+<p>Experience authentic flavors crafted by expert chefs with love and passion</p>
+<a href="#dishes" class="btn">Order Now</a>
+</div>
+</section>
+
+<section id="dishes">
+<div class="container">
+<h2>Featured Dishes</h2>
+<div class="dishes">
+<div class="card">
+<img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38" alt="Italian Pizza">
+<h3>Italian Pizza</h3>
+<p>Authentic wood-fired pizza topped with fresh mozzarella, basil, and our secret tomato sauce.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445" alt="Gourmet Burger">
+<h3>Gourmet Burger</h3>
+<p>Juicy grilled beef patty with aged cheddar, caramelized onions, and signature sauce.</p>
+</div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="Fresh Salad">
+<h3>Garden Fresh Salad</h3>
+<p>Organic mixed greens with grilled chicken, cherry tomatoes, and balsamic vinaigrette.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="about">
+<div class="container">
+<h2>Why Choose Us</h2>
+<div class="features">
+<div class="card">
+<h3>Fresh Ingredients</h3>
+<p>We source only the freshest local produce and premium ingredients daily from trusted farmers.</p>
+</div>
+<div class="card">
+<h3>Expert Chefs</h3>
+<p>Our internationally trained chefs bring 15+ years of culinary excellence to every dish.</p>
+</div>
+<div class="card">
+<h3>Fast Delivery</h3>
+<p>Hot, delicious food delivered to your doorstep in under 30 minutes, guaranteed.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="container">
+<h2>Customer Testimonials</h2>
+<div class="testimonials">
+<div class="card">
+<p>"The best biryani I have ever tasted! Flavors are absolutely authentic and the portion size is generous."</p>
+<h4>- Ahmed Khan</h4>
+</div>
+<div class="card">
+<p>"Quick delivery, piping hot food, and amazing customer service. Tasty Bites is now my go-to restaurant!"</p>
+<h4>- Fatima Ali</h4>
+</div>
+<div class="card">
+<p>"Beautiful ambiance and even better food. Perfect place for family dinners and celebrations."</p>
+<h4>- Usman Raza</h4>
+</div>
+</div>
+</div>
+</section>
+
+<footer id="contact">
+<div class="container">
+<div class="footer-content">
+<div>
+<h3>Tasty Bites</h3>
+<p>Serving happiness through delicious food since 2020. Your satisfaction is our priority.</p>
+</div>
+<div>
+<h3>Contact Us</h3>
+<p>📍 Jam Shoro, Sindh, Pakistan</p>
+<p>📞 +92 300 1234567</p>
+<p>✉️ info@tastybites.pk</p>
+</div>
+<div>
+<h3>Follow Us</h3>
+<div class="social">
+<a href="#">Facebook</a>
+<a href="#">Instagram</a>
+<a href="#">WhatsApp</a>
+</div>
+</div>
+</div>
+<div class="copyright">
+<p>&copy; 2026 Tasty Bites Restaurant. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+<script>
+function toggleMenu(){
+document.getElementById('navLinks').classList.toggle('active');
+}
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener('click', function (e) {
+e.preventDefault();
+document.querySelector(this.getAttribute('href')).scrollIntoView({behavior: 'smooth'});
+document.getElementById('navLinks').classList.remove('active');
+});
+});
+</script>
+</body>
+</html>
