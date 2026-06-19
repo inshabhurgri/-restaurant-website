@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Restaurant</title>
+    <title>Contact Us - Tasty Bites</title>
     <link rel="stylesheet" href="style.css">
     <style>
         .contact-container {
@@ -18,25 +18,15 @@
             flex: 1;
             min-width: 300px;
         }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; font-weight: bold; }
         .form-group input, .form-group textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-        .error {
-            color: red;
-            font-size: 14px;
-            display: none;
-        }
+        .error { color: red; font-size: 14px; display: none; }
         .submit-btn {
             background: #ff6347;
             color: white;
@@ -45,21 +35,18 @@
             border-radius: 5px;
             cursor: pointer;
         }
-        .contact-info p { margin: 10px 0; }
-        .map { margin-top: 20px; }
         iframe { width: 100%; height: 300px; border: 0; }
     </style>
 </head>
 <body>
-    <!-- Navbar same as other pages -->
     <header>
         <nav>
-            <div class="logo">Restaurant</div>
+            <div class="logo">Tasty Bites</div>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.html" style="color: #ff6347;">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -67,7 +54,6 @@
     <h1 style="text-align: center; margin-top: 30px;">Contact Us</h1>
     
     <div class="contact-container">
-        <!-- Contact Form -->
         <div class="contact-form">
             <h2>Send us a Message</h2>
             <form id="contactForm">
@@ -76,85 +62,46 @@
                     <input type="text" id="name">
                     <span class="error" id="nameError">Name is required</span>
                 </div>
-                
                 <div class="form-group">
                     <label for="email">Email *</label>
                     <input type="email" id="email">
                     <span class="error" id="emailError">Valid email is required</span>
                 </div>
-                
-                <div class="form-group">
-                    <label for="subject">Subject *</label>
-                    <input type="text" id="subject">
-                    <span class="error" id="subjectError">Subject is required</span>
-                </div>
-                
                 <div class="form-group">
                     <label for="message">Message *</label>
                     <textarea id="message" rows="5"></textarea>
                     <span class="error" id="messageError">Message is required</span>
                 </div>
-                
                 <button type="submit" class="submit-btn">Send Message</button>
             </form>
         </div>
 
-        <!-- Contact Info -->
         <div class="contact-info">
             <h2>Contact Information</h2>
-            <p><strong>Address:</strong> Main Boulevard, Jamshoro, Sindh, Pakistan</p>
-            <p><strong>Phone Number:</strong> +92 300 1234567</p>
-            <p><strong>Email Address:</strong> info@restaurant.com</p>
-            
-            <!-- Optional Google Map -->
-            <div class="map">
-                <h3>Find Us Here</h3>
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115681.29532437672!2d68.2!3d25.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418c5b8e4b7e1f%3A0x4b4c4b4b4b4b4b4b!2sJamshoro!5e0!3m2!1sen!2s!4v1234567890" 
-                    allowfullscreen="" 
-                    loading="lazy">
-                </iframe>
+            <p><strong>Address:</strong> Main Boulevard, Jamshoro, Sindh</p>
+            <p><strong>Phone:</strong> +92 300 1234567</p>
+            <p><strong>Email:</strong> info@tastybites.com</p>
+            <div style="margin-top: 20px;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115681.29532437672!2d68.2!3d25.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39418c5b8e4b7e1f%3A0x4b4c4b4b4b4b!2sJamshoro!5e0!3m2!1sen!2s!4v1234567890" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>
 
-    <!-- Validation Script -->
     <script>
         document.getElementById('contactForm').addEventListener('submit', function(e) {
             e.preventDefault();
             let isValid = true;
-
-            // Reset errors
             document.querySelectorAll('.error').forEach(el => el.style.display = 'none');
 
-            // Name validation
             const name = document.getElementById('name').value.trim();
-            if (name === '') {
-                document.getElementById('nameError').style.display = 'block';
-                isValid = false;
-            }
+            if (name === '') { document.getElementById('nameError').style.display = 'block'; isValid = false; }
 
-            // Email validation
             const email = document.getElementById('email').value.trim();
             const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (email === '' || !emailPattern.test(email)) {
-                document.getElementById('emailError').style.display = 'block';
-                isValid = false;
-            }
+            if (email === '' || !emailPattern.test(email)) { document.getElementById('emailError').style.display = 'block'; isValid = false; }
 
-            // Subject validation
-            const subject = document.getElementById('subject').value.trim();
-            if (subject === '') {
-                document.getElementById('subjectError').style.display = 'block';
-                isValid = false;
-            }
-
-            // Message validation
             const message = document.getElementById('message').value.trim();
-            if (message === '') {
-                document.getElementById('messageError').style.display = 'block';
-                isValid = false;
-            }
+            if (message === '') { document.getElementById('messageError').style.display = 'block'; isValid = false; }
 
             if (isValid) {
                 alert('Form submitted successfully!');
